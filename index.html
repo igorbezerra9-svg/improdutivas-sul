@@ -675,8 +675,7 @@ async function publicarGitHub(){
 }
 document.getElementById('bToken').onclick=()=>{
   const atual=localStorage.getItem('gh_token')?'(já configurado — deixe vazio para manter, "-" para remover)':'';
-  const v=prompt('Cole o token do GitHub (fine-grained, permissão Contents: Read and write só neste repositório).
-Fica salvo apenas neste navegador. '+atual);
+  const v=prompt('Cole o token do GitHub (fine-grained, permissão Contents: Read and write só neste repositório).\nFica salvo apenas neste navegador. '+atual);
   if(v===null||v==='') return; if(v.trim()==='-'){ localStorage.removeItem('gh_token'); toast('Token removido.'); return; }
   localStorage.setItem('gh_token',v.trim()); toast('Token salvo. A partir de agora, importar já publica.'); };
 document.getElementById('bPublicar').onclick=()=>{
